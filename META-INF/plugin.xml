@@ -1,0 +1,54 @@
+<idea-plugin version="2">
+  <id>in.ishankhanna.pubplug</id>
+  <name>PubPlug</name>
+  <version>1.0</version>
+  <vendor email="ishan1604@gmail.com" url="http://www.ishankhanna.in">Ishan Khanna</vendor>
+
+  <description><![CDATA[
+      PubPlug is a publishing plugin for Android Apps.<br>
+      By using this plugin you can easily release your Android Apps on the google play store from within your IDE.<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <b> What's New </b>
+       <ul>
+          <li>Upload your APK in minutes right from the IDE</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="pubplug.uploadApk" class="UploadAPKAction" text="Upload APK"
+            description="Upload APK to the Google Play Store">
+      <add-to-group group-id="BuildMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="meta alt U" second-keystroke="ctrl alt U"/>
+    </action>
+      <action id="pubplug.configureGooglePlayAccess" class="GooglePlayAccountConfiguration"
+              text="Google Play Account Configuration" description="Configure Google Play Account Credentials">
+          <add-to-group group-id="FileMainSettingsGroup" anchor="after" relative-to-action="ShowSettings"/>
+      </action>
+  </actions>
+
+</idea-plugin>
